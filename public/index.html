@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lottie Test</title>
+</head>
+<body>
+
+  <div id="button" style="width: 320px; height: 100px;"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.3/lottie.min.js" type="text/javascript"></script>
+  <script>
+    console.log(lottie);
+
+    var button = document.getElementById('button');
+    var buttonAnimation = lottie.loadAnimation({
+      container: button,
+      name: 'button',
+      renderer: 'svg',
+      loop: false,
+      autoplay: false,
+      path: 'button.json',
+    });
+
+    button.onclick = function() {
+      buttonAnimation.goToAndPlay(0);
+    }
+  </script>
+
+  <style>
+    html, body { margin: 0; padding: 0; }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+    }
+    #button {
+      width: 321px;
+      height: 100px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    #button:hover {
+      opacity: 0.95;
+    }
+  </style>
+
+</body>
+</html>
